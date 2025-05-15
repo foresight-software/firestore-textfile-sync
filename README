@@ -1,0 +1,31 @@
+# Firestore Text File Sync
+
+## Motivation
+
+This component was created to solve a specific integration challenge: connecting a legacy system with Firestore without requiring major system upgrades or dependency changes. The legacy system can be modified but cannot have its dependencies upgraded, making direct Firestore integration problematic.
+
+## Solution
+
+Firestore Text File Sync acts as a bridge between Firestore and a local text file system. It provides a lightweight, efficient way to synchronize data between Firestore and local text files, which can be easily parsed by the legacy system without requiring special code or dependencies.
+
+## Features
+
+### 1. Firestore to CSV Sync
+- Listens to a specified Firestore collection
+- Reacts to new documents being created
+- Appends new data to a configured CSV file
+- Minimal latency due to simple CSV parsing
+- Uses a simple configuration file for setup
+
+### 2. CSV to Firestore Upload
+- Monitors specified CSV files for changes
+- Detects new lines being appended
+- Uploads new data to corresponding Firestore documents
+
+## Benefits
+
+- **Minimal System Impact**: Uses CSV format that can be easily parsed
+- **Flexible Integration**: Can be implemented without major system changes
+- **Low Latency**: CSV file operations are fast and efficient
+- **Simple Maintenance**: Easy to understand and modify
+- **Future-Proof**: Can be extended to support other file formats in the future
